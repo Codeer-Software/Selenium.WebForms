@@ -17,21 +17,13 @@ namespace Selenium.WebForms
             Parent = parent;
             Index = index;
         }
+
         public ListViewSubItemDriver(ListViewSubItemDriver src)
         {
             Parent = src.Parent;
             Index = src.Index;
         }
-
+        public ElementDriver GetElement() => new ElementDriver(Parent.Parent.Driver, new ElementWebElement(SubItemElement));
     }
-    public static class WebElementExtensions
-    {
-        public static ElementDriver GetElement(this ListViewSubItemDriver subItem)
-        {
-            return new ElementDriver(subItem.Parent.Parent.Driver, subItem.SubItemElement);
 
-            //var script = $"var {WebElement.VarName}=$('#{subItem.Parent.Parent.Id}_itemPlaceholderContainer').find('tr')[{subItem.Index}];";
-            //return new WebElement(subItem.Parent.Parent.Driver, script);
-        }
-    }
 }

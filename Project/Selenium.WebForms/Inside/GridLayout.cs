@@ -1,16 +1,16 @@
-﻿using OpenQA.Selenium;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using OpenQA.Selenium;
 
 namespace Selenium.WebForms.Inside
 {
-    static class GridLayout
+    internal static class GridLayout
     {
         internal class ListViewLayout : IListViewLayout
         {
-            readonly ListViewDriver _driver;
-            readonly IWebElement _listView;
+            private readonly ListViewDriver _driver;
+            private readonly IWebElement _listView;
 
-            ReadOnlyCollection<IWebElement> Items => _listView.FindElements(By.TagName("tr"));
+            private ReadOnlyCollection<IWebElement> Items => _listView.FindElements(By.TagName("tr"));
             public int ItemCount => Items.Count;
 
             internal ListViewLayout(ListViewDriver driver)
@@ -18,16 +18,17 @@ namespace Selenium.WebForms.Inside
                 _driver = driver;
                 _listView = _driver.Driver.FindElement(By.Id(driver.Id + "_itemPlaceholderContainer"));
             }
+
             public IListViewHeaderItemLayout GetHeaderItem(int index) => new ListViewHeaderItemLayout(_driver, index, Items[0]);
+
             public IListViewItemLayout GetItem(int index) => new ListViewItemLayout(_driver, index, Items[index + 1]);
         }
 
-
         private class ListViewHeaderItemLayout : IListViewHeaderItemLayout
         {
-            readonly ListViewDriver _driver;
-            readonly IWebElement _element;
-            readonly int _index;
+            private readonly ListViewDriver _driver;
+            private readonly IWebElement _element;
+            private readonly int _index;
 
             public ListViewHeaderItemLayout(ListViewDriver driver, int index, IWebElement element)
             {
@@ -35,14 +36,15 @@ namespace Selenium.WebForms.Inside
                 _element = element;
                 _index = index;
             }
+
             public string Text => _element.FindElements(By.TagName("th"))[_index + 1].Text;
         }
 
-        class ListViewItemLayout : IListViewItemLayout
+        private class ListViewItemLayout : IListViewItemLayout
         {
-            readonly ListViewDriver _driver;
-            readonly IWebElement _element;
-            readonly int _index;
+            private readonly ListViewDriver _driver;
+            private readonly IWebElement _element;
+            private readonly int _index;
 
             public IWebElement Delete => GetButton("Delete");
             public IWebElement Edit => GetButton("Edit");
@@ -58,7 +60,7 @@ namespace Selenium.WebForms.Inside
                 _index = index;
             }
 
-            IWebElement GetButton(string type) => _element.FindElement(By.Id(_driver.Id + "_" + type + "Button_" + _index));
+            private IWebElement GetButton(string type) => _element.FindElement(By.Id(_driver.Id + "_" + type + "Button_" + _index));
 
             public IListViewSubItemLayout GetSubItem(int index)
             {
@@ -67,9 +69,9 @@ namespace Selenium.WebForms.Inside
             }
         }
 
-        class ListViewSubItemLayout : IListViewSubItemLayout
+        private class ListViewSubItemLayout : IListViewSubItemLayout
         {
-            ListViewDriver _driver;
+            private ListViewDriver _driver;
 
             public IWebElement Core { get; }
 

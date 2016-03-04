@@ -44,12 +44,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inside\ElementWebElement.cs" />
     <Compile Include="Inside\GridLayout.cs" />
     <Compile Include="Inside\IListViewHeaderItemLayout.cs" />
     <Compile Include="Inside\IListViewItemLayout.cs" />
     <Compile Include="Inside\IListViewLayout.cs" />
     <Compile Include="Inside\IListViewSubItemLayout.cs" />
-    <Compile Include="Inside\LayoutExtensions.cs" />
     <Compile Include="ListViewDriver.cs" />
     <Compile Include="ListViewHeaderDriver.cs" />
     <Compile Include="ListViewItemDriver.cs" />

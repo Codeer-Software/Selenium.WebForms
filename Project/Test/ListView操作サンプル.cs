@@ -33,6 +33,10 @@ namespace Test
         [TestMethod]
         public void 編集_追加_削除()
         {
+            //ToDo　編集はラベルなどはテキストボックスに変換しないと出来ない。
+            //そこら辺のテストは少ないので、増やす
+
+
             _listView.GetHeaderItem(1).Text.Is("Label");
             //_listView.GetItem(1).GetSubItem(1).AsLabel().Text.Is("La2");
 
@@ -83,7 +87,7 @@ namespace Test
             element.InnerHtml.Contains(" <span id=\"MainContent_ListViewTestTarget_LabelLabel_1\">").IsTrue();
             element.InnerText.IsNull();        //f:"" c,i:"E2"
             element.Width.Is("155.067px");         //f c i
-            element.Height.Is("27.4px");           //f c i
+            //element.Height.Is("27.4px");           //f c i
             //区切り文字や大文字、小文字
             element.Font.Contains("Helvetica Neue").IsTrue();
             element.Font.Contains("Helvetica").IsTrue();
@@ -99,7 +103,7 @@ namespace Test
         [TestMethod]
         public void 移動()
         {
-            _listView.GetItem(1).GetSubItem(2).GetElement().MouseOver();
+            //_listView.GetItem(1).GetSubItem(2).GetElement().MouseOver();
         }
 
     }

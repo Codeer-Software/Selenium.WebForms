@@ -78,7 +78,7 @@ namespace Test
             var element = _listView.GetItem(1).GetSubItem(1).GetElement();
             element.FontItalic.IsFalse();
             element.FontBold.IsFalse();
-            element.FonsSize.Is("14px");
+            element.FontSize.Is("14px");
             element.TextUnderline.IsFalse();
             element.TextLineThrough.IsFalse();
             element.ImeMode.Is("auto");         //f:auto c,i:""
@@ -96,7 +96,7 @@ namespace Test
             element.Color.Is("rgba(51, 51, 51, 1)");
             element.BackGroundColor.Is("transparent");    //f,i:transparent c:0,0,0
             element.TextAlign.Is("start");               //f,c:start i:left
-            element.ClassName.Is("");
+            element.CssClass.Is("");
             element.TabIndex.Is(-1);                        //f,c:-1 i:0
             element.MaxLength.IsNull();
         }

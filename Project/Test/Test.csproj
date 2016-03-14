@@ -40,10 +40,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Selenium.StandardControls, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Selenium.WebForms\packages\Selenium.StandardControls.0.0.2\lib\net40\Selenium.StandardControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
-    <Reference Include="WebDriver, Version=2.51.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Selenium.WebForms\packages\Selenium.WebDriver.2.51.0\lib\net40\WebDriver.dll</HintPath>
+    <Reference Include="WebDriver, Version=2.52.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Selenium.WebForms\packages\Selenium.WebDriver.2.52.0\lib\net40\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -70,17 +74,13 @@
     <Content Include="XPathTarget.html" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Selenium.StandardControls\Project\Selenium.StandardControls\Selenium.StandardControls.csproj">
-      <Project>{94913395-2f6b-4613-8630-e30004e69103}</Project>
-      <Name>Selenium.StandardControls</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Selenium.WebForms\Selenium.WebForms.csproj">
       <Project>{9cce6a26-5341-4cae-a3c2-491fd7ba640b}</Project>
       <Name>Selenium.WebForms</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -194,7 +194,7 @@
                 </tr>
             </SelectedItemTemplate>
         </asp:ListView>
-        <asp:SqlDataSource ID="SqlDataSourceListView" runat="server" ConnectionString="Data Source=BINNSURFACE4\SQLEXPRESS;Initial Catalog=ListViewTestData;User ID=sa;Password=codeer" DeleteCommand="DELETE FROM [Table_Data] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Table_Data] ([Id], [Label], [TextBox], [Button], [LinkButton], [CheckBox], [RadioButton]) VALUES (@Id, @Label, @TextBox, @Button, @LinkButton, @CheckBox, @RadioButton)" SelectCommand="SELECT [Id], [Label], [TextBox], [Button], [LinkButton], [CheckBox], [RadioButton] FROM [Table_Data]" UpdateCommand="UPDATE [Table_Data] SET [Label] = @Label, [TextBox] = @TextBox, [Button] = @Button, [LinkButton] = @LinkButton, [CheckBox] = @CheckBox, [RadioButton] = @RadioButton WHERE [Id] = @Id">
+        <asp:SqlDataSource ID="SqlDataSourceListView" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Data.mdf;Integrated Security=True;" DeleteCommand="DELETE FROM [Table_Data] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Table_Data] ([Id], [Label], [TextBox], [Button], [LinkButton], [CheckBox], [RadioButton]) VALUES (@Id, @Label, @TextBox, @Button, @LinkButton, @CheckBox, @RadioButton)" SelectCommand="SELECT [Id], [Label], [TextBox], [Button], [LinkButton], [CheckBox], [RadioButton] FROM [Table_Data]" UpdateCommand="UPDATE [Table_Data] SET [Label] = @Label, [TextBox] = @TextBox, [Button] = @Button, [LinkButton] = @LinkButton, [CheckBox] = @CheckBox, [RadioButton] = @RadioButton WHERE [Id] = @Id">
             <DeleteParameters>
                 <asp:Parameter Name="Id" Type="Int32" />
             </DeleteParameters>

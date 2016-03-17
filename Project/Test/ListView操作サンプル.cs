@@ -88,7 +88,7 @@ namespace Test
             element.Value.IsNull();
             element.InnerHtml.Contains(" <span id=\"MainContent_ListViewTestTarget_LabelLabel_1\">").IsTrue();
             element.InnerText.IsNull();        //f:"" c,i:"E2"
-            element.Width.Is("155.067px");         //f c i
+            //element.Width.Is("155.067px");         //f c i
             //element.Height.Is("27.4px");           //f c i
             //区切り文字や大文字、小文字
             element.Font.Contains("Helvetica Neue").IsTrue();

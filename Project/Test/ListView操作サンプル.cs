@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
 using Selenium.WebForms;
 using System.Threading;
 
@@ -15,6 +14,8 @@ namespace Test
         [TestInitialize]
         public void TestInitialize()
         {
+            DBDriver.InitDB();
+
             _driver = BrowserUtil.GetDriver(BrowserUtil.Browser.Firefox);
             _driver.Url = "http://localhost:1776/Default";
             _listView = new ListViewDriver(_driver, "MainContent_ListViewTestTarget");
@@ -22,6 +23,7 @@ namespace Test
             {
                 Thread.Sleep(10);
             }
+
         }
 
         [TestCleanup]

@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using Selenium.StandardControls;
-using Selenium.WebForms.Inside;
 
 namespace Selenium.WebForms
 {
@@ -23,7 +22,7 @@ namespace Selenium.WebForms
             Parent = src.Parent;
             Index = src.Index;
         }
-        public ElementDriver GetElement() => new ElementDriver(new ElementWebElement(SubItemElement));
-    }
 
+        public ElementDriver GetElement() => new ElementDriver(SubItemElement);
+    }
 }

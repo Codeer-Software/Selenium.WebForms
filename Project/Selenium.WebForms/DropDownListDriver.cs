@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using OpenQA.Selenium;
 using Selenium.StandardControls;
+using OpenQA.Selenium.Support.UI;
 
 namespace Selenium.WebForms
 {
@@ -14,23 +15,19 @@ namespace Selenium.WebForms
         public long SelectedIndex => (long)Js.ExecuteScript("return document.getElementById(\"" + Id + "\").selectedIndex;");
         public string[] Items => GetItems();
         public ElementDriver Element => new ElementDriver(IdElement);
+        public SelectElement Core => new SelectElement(IdElement);
 
         public void Edit(string text)
         {
-            IdElement.SendKeys(text);
+            Core.SelectByText(text);
         }
 
         public void Edit(int index)
         {
             Js.ExecuteScript("return document.getElementById(\"" + Id + "\").blur();");
-            IdElement.SendKeys(Items[index]);
+            Core.SelectByIndex(index);
         }
-
-        public void Check()
-        {
-            var x = Js.ExecuteScript("return document.getElementById(\"" + Id + "\").selectedIndex;");
-        }
-
+        
         public string[] GetItems()
         {
             dynamic items = Js.ExecuteScript("return document.getElementById(\"" + Id + "\").options;");

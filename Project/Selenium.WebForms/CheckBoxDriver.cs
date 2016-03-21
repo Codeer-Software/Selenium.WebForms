@@ -5,7 +5,7 @@ namespace Selenium.WebForms
 {
     public class CheckBoxDriver : ControlBaseDriver
     {
-        public CheckBoxDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public CheckBoxDriver(IWebDriver driver, string id) : base(driver, id)
         {
         }
 

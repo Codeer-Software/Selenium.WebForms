@@ -5,7 +5,7 @@ namespace Selenium.WebForms
 {
     public class RadioButtonDriver : ControlBaseDriver
     {
-        public RadioButtonDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public RadioButtonDriver(IWebDriver driver, string id) : base(driver, id)
         {
         }
 

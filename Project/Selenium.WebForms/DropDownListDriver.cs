@@ -6,7 +6,7 @@ namespace Selenium.WebForms
 {
     public class DropDownListDriver : ControlBaseDriver
     {
-        public DropDownListDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public DropDownListDriver(IWebDriver driver, string id) : base(driver, id)
         {
         }
 

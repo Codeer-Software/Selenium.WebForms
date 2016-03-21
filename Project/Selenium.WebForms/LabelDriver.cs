@@ -5,7 +5,7 @@ namespace Selenium.WebForms
 {
     public class LabelDriver : ControlBaseDriver
     {
-        public LabelDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public LabelDriver(IWebDriver driver, string id) : base(driver, id)
         {
         }
 

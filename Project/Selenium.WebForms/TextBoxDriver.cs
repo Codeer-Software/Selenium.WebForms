@@ -5,7 +5,7 @@ namespace Selenium.WebForms
 {
     public class TextBoxDriver : ControlBaseDriver
     {
-        public TextBoxDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public TextBoxDriver(IWebDriver driver, string id) : base(driver, id)
         {
         }
 

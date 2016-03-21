@@ -65,6 +65,7 @@
     <Compile Include="ListViewSubItemRadioButtonDriver.cs" />
     <Compile Include="ListViewSubItemTextBoxDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdatePanelDriver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

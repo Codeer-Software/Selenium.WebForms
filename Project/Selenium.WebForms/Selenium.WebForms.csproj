@@ -48,6 +48,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\ControlBaseDriver.cs" />
+    <Compile Include="Control\ControlButtonDriver.cs" />
+    <Compile Include="Control\ControlCheckBoxDriver.cs" />
+    <Compile Include="Control\ControlDropDownListDriver.cs" />
+    <Compile Include="Control\ControlLabelDriver.cs" />
+    <Compile Include="Control\ControlLinkButtonDriver.cs" />
+    <Compile Include="Control\ControlRadioButtonDriver.cs" />
+    <Compile Include="Control\ControlTextBoxDriver.cs" />
+    <Compile Include="Control\WebElementExtensions.cs" />
     <Compile Include="Inside\GridLayout.cs" />
     <Compile Include="Inside\IListViewHeaderItemLayout.cs" />
     <Compile Include="Inside\IListViewItemLayout.cs" />

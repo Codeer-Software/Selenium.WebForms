@@ -12,11 +12,10 @@ namespace Selenium.WebForms
         public string Text => IdElement.GetAttribute("value");
         public ElementDriver Element => new ElementDriver(IdElement);
 
-        public string Edit(string text)
+        public void Edit(string text)
         {
             IdElement.Clear();
             IdElement.SendKeys(text);
-            return IdElement.GetAttribute("tooltip-error");
         }
     }
 }

@@ -1,11 +1,11 @@
 ﻿using OpenQA.Selenium;
 using Selenium.StandardControls;
 
-namespace Selenium.WebForms.Control
+namespace Selenium.WebForms
 {
-    public class ControlLabelDriver : ControlBaseDriver
+    public class LabelDriver : ControlBaseDriver
     {
-        public ControlLabelDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public LabelDriver(IWebDriver driver, string baseId) : base(driver, baseId)
         {
         }
 

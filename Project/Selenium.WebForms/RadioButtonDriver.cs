@@ -1,11 +1,11 @@
 ﻿using OpenQA.Selenium;
 using Selenium.StandardControls;
 
-namespace Selenium.WebForms.Control
+namespace Selenium.WebForms
 {
-    public class ControlRadioButtonDriver : ControlBaseDriver
+    public class RadioButtonDriver : ControlBaseDriver
     {
-        public ControlRadioButtonDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public RadioButtonDriver(IWebDriver driver, string baseId) : base(driver, baseId)
         {
         }
 

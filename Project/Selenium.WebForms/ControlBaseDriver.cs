@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Selenium.WebForms.Control
+namespace Selenium.WebForms
 {
     public abstract class ControlBaseDriver
     {

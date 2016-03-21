@@ -1,11 +1,11 @@
 ﻿using OpenQA.Selenium;
 using Selenium.StandardControls;
 
-namespace Selenium.WebForms.Control
+namespace Selenium.WebForms
 {
-    public class ControlCheckBoxDriver : ControlBaseDriver
+    public class CheckBoxDriver : ControlBaseDriver
     {
-        public ControlCheckBoxDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public CheckBoxDriver(IWebDriver driver, string baseId) : base(driver, baseId)
         {
         }
 

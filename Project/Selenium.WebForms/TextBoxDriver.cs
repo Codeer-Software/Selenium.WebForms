@@ -1,11 +1,11 @@
 ﻿using OpenQA.Selenium;
 using Selenium.StandardControls;
 
-namespace Selenium.WebForms.Control
+namespace Selenium.WebForms
 {
-    public class ControlTextBoxDriver : ControlBaseDriver
+    public class TextBoxDriver : ControlBaseDriver
     {
-        public ControlTextBoxDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public TextBoxDriver(IWebDriver driver, string baseId) : base(driver, baseId)
         {
         }
 

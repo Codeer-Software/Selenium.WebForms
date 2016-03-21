@@ -2,11 +2,11 @@
 using OpenQA.Selenium;
 using Selenium.StandardControls;
 
-namespace Selenium.WebForms.Control
+namespace Selenium.WebForms
 {
-    public class ControlDropDownListDriver : ControlBaseDriver
+    public class DropDownListDriver : ControlBaseDriver
     {
-        public ControlDropDownListDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public DropDownListDriver(IWebDriver driver, string baseId) : base(driver, baseId)
         {
         }
 

@@ -1,11 +1,11 @@
 ﻿using OpenQA.Selenium;
 using Selenium.StandardControls;
 
-namespace Selenium.WebForms.Control
+namespace Selenium.WebForms
 {
-    public class ControlLinkButtonDriver : ControlBaseDriver
+    public class LinkButtonDriver : ControlBaseDriver
     {
-        public ControlLinkButtonDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public LinkButtonDriver(IWebDriver driver, string baseId) : base(driver, baseId)
         {
         }
 

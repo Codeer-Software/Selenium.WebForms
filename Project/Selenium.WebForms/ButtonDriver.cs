@@ -1,11 +1,11 @@
 ﻿using OpenQA.Selenium;
 using Selenium.StandardControls;
 
-namespace Selenium.WebForms.Control
+namespace Selenium.WebForms
 {
-    public class ControlButtonDriver : ControlBaseDriver
+    public class ButtonDriver : ControlBaseDriver
     {
-        public ControlButtonDriver(IWebDriver driver, string baseId) : base(driver, baseId)
+        public ButtonDriver(IWebDriver driver, string baseId) : base(driver, baseId)
         {
         }
         public string Text => IdElement.GetAttribute("value");

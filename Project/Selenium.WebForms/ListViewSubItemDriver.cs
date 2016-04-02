@@ -23,6 +23,6 @@ namespace Selenium.WebForms
             Index = src.Index;
         }
 
-        public ElementDriver GetElement() => new ElementDriver(SubItemElement);
+        public ElementInfo GetElement() => new ElementInfo(SubItemElement);
     }
 }

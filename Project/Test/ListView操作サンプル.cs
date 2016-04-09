@@ -77,30 +77,30 @@ namespace Test
         public void Element取得()
         {
             //ToDo 現状Firefox限定の書き方。これに関しては上位で吸収予定。
-            var element = _listView.GetItem(1).GetSubItem(1).GetElement();
-            element.FontItalic.IsFalse();
-            element.FontBold.IsFalse();
-            element.FontSize.Is("14px");
-            element.TextUnderline.IsFalse();
-            element.TextLineThrough.IsFalse();
-            element.ImeMode.Is("auto");         //f:auto c,i:""
-            element.Text.IsNull();
-            element.Value.IsNull();
-            element.InnerHtml.Contains(" <span id=\"MainContent_ListViewTestTarget_LabelLabel_1\">").IsTrue();
-            element.InnerText.IsNull();        //f:"" c,i:"E2"
-            //element.Width.Is("155.067px");         //f c i
-            //element.Height.Is("27.4px");           //f c i
+            var Info = _listView.GetItem(1).GetSubItem(1).Info;
+            Info.FontItalic.IsFalse();
+            Info.FontBold.IsFalse();
+            Info.FontSize.Is("14px");
+            Info.TextUnderline.IsFalse();
+            Info.TextLineThrough.IsFalse();
+            Info.ImeMode.Is("auto");         //f:auto c,i:""
+            Info.Text.IsNull();
+            Info.Value.IsNull();
+            Info.InnerHtml.Contains(" <span id=\"MainContent_ListViewTestTarget_LabelLabel_1\">").IsTrue();
+            //Info.InnerText.IsNull();        //f:"" c,i:"E2"
+            //Info.Width.Is("155.067px");         //f c i
+            //Info.Height.Is("27.4px");           //f c i
             //区切り文字や大文字、小文字
-            element.Font.Contains("Helvetica Neue").IsTrue();
-            element.Font.Contains("Helvetica").IsTrue();
-            element.Font.Contains("Arial").IsTrue();
-            element.Font.Contains("sans-serif").IsTrue();
-            element.Color.Is("rgba(51, 51, 51, 1)");
-            element.BackGroundColor.Is("transparent");    //f,i:transparent c:0,0,0
-            element.TextAlign.Is("start");               //f,c:start i:left
-            element.CssClass.Is("");
-            element.TabIndex.Is(-1);                        //f,c:-1 i:0
-            element.MaxLength.IsNull();
+            Info.Font.Contains("Helvetica Neue").IsTrue();
+            Info.Font.Contains("Helvetica").IsTrue();
+            Info.Font.Contains("Arial").IsTrue();
+            Info.Font.Contains("sans-serif").IsTrue();
+            Info.Color.Is("rgba(51, 51, 51, 1)");
+            Info.BackGroundColor.Is("transparent");    //f,i:transparent c:0,0,0
+            Info.TextAlign.Is("start");               //f,c:start i:left
+            Info.CssClass.Is("");
+            Info.TabIndex.Is(-1);                        //f,c:-1 i:0
+            Info.MaxLength.IsNull();
         }
         [TestMethod]
         public void 移動()

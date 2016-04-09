@@ -52,8 +52,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormsCheckBoxDriver.cs" />
-    <Compile Include="FormsRadioButtonDriver.cs" />
     <Compile Include="Inside\GridLayout.cs" />
     <Compile Include="Inside\IListViewHeaderItemLayout.cs" />
     <Compile Include="Inside\IListViewItemLayout.cs" />

@@ -4,7 +4,7 @@ namespace Selenium.WebForms
 {
     public class ListViewSubItemTextBoxDriver : ListViewSubItemDriver
     {
-        private IWebElement TextBox => SubItemElement.FindElement(By.XPath("input[@type='text']"));
+        private IWebElement TextBox => Element.FindElement(By.XPath("input[@type='text']"));
 
         public string Text => TextBox.Text;
 

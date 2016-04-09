@@ -8,8 +8,8 @@ namespace Selenium.WebForms
 
     public class ListViewSubItemRadioButtonDriver : ListViewSubItemDriver
     {
-        private IWebElement CheckButton => SubItemElement.FindElement(By.XPath("input[@type='radio']"));
-        public string Text => SubItemElement.Text;
+        private IWebElement CheckButton => Element.FindElement(By.XPath("input[@type='radio']"));
+        public string Text => Element.Text;
         public ListViewSubItemRadioButtonDriver(ListViewSubItemDriver src) : base(src) { }
 
         public void Click()

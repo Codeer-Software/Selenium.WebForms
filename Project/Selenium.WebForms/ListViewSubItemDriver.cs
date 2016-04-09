@@ -6,8 +6,8 @@ namespace Selenium.WebForms
     public class ListViewSubItemDriver
     {
         internal ListViewItemDriver Parent { get; }
-
-        internal IWebElement SubItemElement => Parent.Parent.Layout().GetItem(Parent.Index).GetSubItem(Index).Core;
+        public ElementInfo Info => new ElementInfo(Element);
+        public IWebElement Element => Parent.Parent.Layout().GetItem(Parent.Index).GetSubItem(Index).Core;
 
         public int Index { get; }
 
@@ -22,7 +22,5 @@ namespace Selenium.WebForms
             Parent = src.Parent;
             Index = src.Index;
         }
-
-        public ElementInfo GetElement() => new ElementInfo(SubItemElement);
     }
 }

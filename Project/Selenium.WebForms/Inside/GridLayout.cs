@@ -9,7 +9,7 @@ namespace Selenium.WebForms.Inside
         {
             private readonly ListViewDriver _driver;
             private readonly IWebElement _listView;
-
+            //TODO
             private ReadOnlyCollection<IWebElement> Items => _listView.FindElements(By.TagName("tr"));
             public int ItemCount => Items.Count;
 
@@ -37,6 +37,7 @@ namespace Selenium.WebForms.Inside
                 _index = index;
             }
 
+            //TODO
             public string Text => _element.FindElements(By.TagName("th"))[_index + 1].Text;
         }
 
@@ -64,7 +65,7 @@ namespace Selenium.WebForms.Inside
 
             public IListViewSubItemLayout GetSubItem(int index)
             {
-                //@@@XPathの方が良いかも。多分できる気がする
+                //TODO
                 return new ListViewSubItemLayout(_driver, _element.FindElements(By.TagName("td"))[index + 1]);
             }
         }

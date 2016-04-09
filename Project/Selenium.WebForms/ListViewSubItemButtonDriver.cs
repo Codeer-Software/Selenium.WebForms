@@ -4,8 +4,8 @@ namespace Selenium.WebForms
 {
     public class ListViewSubItemButtonDriver : ListViewSubItemDriver
     {
-        private IWebElement Button => SubItemElement.FindElement(By.XPath("input[@type='submit']"));
-        public string Text => SubItemElement.Text;
+        private IWebElement Button => Element.FindElement(By.XPath("input[@type='submit']"));
+        public string Text => Element.Text;
         public ListViewSubItemButtonDriver(ListViewSubItemDriver src) : base(src) { }
 
         public void Click()

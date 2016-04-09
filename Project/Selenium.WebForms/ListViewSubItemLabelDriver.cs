@@ -2,7 +2,7 @@
 {
     public class ListViewSubItemLabelDriver : ListViewSubItemDriver
     {
-        public string Text => SubItemElement.Text;
+        public string Text => Element.Text;
         public ListViewSubItemLabelDriver(ListViewSubItemDriver src) : base(src) { }
     }
 

@@ -98,7 +98,7 @@ namespace Test
             Info.Color.Is("rgba(51, 51, 51, 1)");
             Info.BackGroundColor.Is("transparent");    //f,i:transparent c:0,0,0
             Info.TextAlign.Is("start");               //f,c:start i:left
-            Info.CssClass.Is("");
+            Info.Class.Is("");
             Info.TabIndex.Is(-1);                        //f,c:-1 i:0
             Info.MaxLength.IsNull();
         }

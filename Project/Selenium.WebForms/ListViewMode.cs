@@ -2,11 +2,10 @@
 {
     public enum ListViewMode
     {
-        //@@@英語版にして表示を見た方がいい
         Grid,
-        Stack,
-        Itemization,
+        Tiled,
+        BulletedList,
         Flow,
-        OneLine,
+        SingleRow,
     }
 }

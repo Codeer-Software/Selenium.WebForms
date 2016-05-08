@@ -46,29 +46,24 @@ namespace Test
             _listView.GetItem(1).GetSubItem(2).AsTextBox().Edit("tt2");
             _listView.GetItem(1).Cancel();
 
-            _listView.GetItem(1).GetSubItem(3).AsButton().Click();
+            _listView.GetItem(1).GetSubItem(3).AsButton().Invoke();
 
             //ToDo 現状リンクをクリックするとポストバックが発生。その際には書き込みが出来なくなるので次で落ちる
-            //_listView.GetItem(1).GetSubItem(4).AsLinkButton().Click();
-
-            //クリックは反転,Selectは固定
-            _listView.GetItem(1).GetSubItem(5).AsCheckButton().Click();
-            _listView.GetItem(1).GetSubItem(5).AsCheckButton().Select(false);
-            _listView.GetItem(1).GetSubItem(5).AsCheckButton().Select(true);
+            //_listView.GetItem(1).GetSubItem(4).AsLinkButton().Invoke();
 
 
-            //ToDo ラジオボタンは現状だと1回クリックしたら消せない。indexみたいなのを指定する作りかも？？
-            _listView.GetItem(1).GetSubItem(6).AsRadioButton().Click();
-            _listView.GetItem(1).GetSubItem(6).AsRadioButton().Select(false);
-            _listView.GetItem(1).GetSubItem(6).AsRadioButton().Select(true);
+            _listView.GetItem(1).GetSubItem(5).AsCheckButton().Edit(true);
+            _listView.GetItem(1).GetSubItem(5).AsCheckButton().Edit(false);
+
+            _listView.GetItem(1).GetSubItem(6).AsRadioButton().Edit();
 
             var insert = _listView.GetItem(_listView.ItemCount - 1);
             insert.GetSubItem(0).AsTextBox().Edit("100");
             insert.Insert();
             insert.StartEdit();
             insert.GetSubItem(1).AsTextBox().Edit("XXX");
-            insert.GetSubItem(5).AsCheckButton().Select(false);
-            insert.GetSubItem(6).AsRadioButton().Click();
+            insert.GetSubItem(5).AsCheckButton().Edit(true);
+            insert.GetSubItem(6).AsRadioButton().Edit();
             insert.Update();
             insert.Delete();
         }

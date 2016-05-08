@@ -1,15 +1,16 @@
 ﻿using OpenQA.Selenium;
+using Selenium.StandardControls;
 
 namespace Selenium.WebForms.Inside
 {
     interface IListViewItemLayout
     {
-        IWebElement Edit { get; }
-        IWebElement Delete { get; }
-        IWebElement Update { get; }
-        IWebElement Cancel { get; }
-        IWebElement Insert { get; }
-        IWebElement Clear { get; }
+        ButtonDriver Edit { get; }
+        ButtonDriver Delete { get; }
+        ButtonDriver Update { get; }
+        ButtonDriver Cancel { get; }
+        ButtonDriver Insert { get; }
+        ButtonDriver Clear { get; }
         IListViewSubItemLayout GetSubItem(int index);
     }
 }

@@ -17,32 +17,32 @@ namespace Selenium.WebForms
 
         public void StartEdit()
         {
-            Parent.Layout().GetItem(Index).Edit.Click();
+            Parent.Layout().GetItem(Index).Edit.Invoke();
         }
 
         public void Delete()
         {
-            Parent.Layout().GetItem(Index).Delete.Click();
+            Parent.Layout().GetItem(Index).Delete.Invoke();
         }
 
         public void Update()
         {
-            Parent.Layout().GetItem(Index).Update.Click();
+            Parent.Layout().GetItem(Index).Update.Invoke();
         }
 
         public void Cancel()
         {
-            Parent.Layout().GetItem(Index).Cancel.Click();
+            Parent.Layout().GetItem(Index).Cancel.Invoke();
         }
 
         public void Insert()
         {
-            Parent.Layout().GetItem(Index).Insert.Click();
+            Parent.Layout().GetItem(Index).Insert.Invoke();
         }
 
         public void Clear()
         {
-            Parent.Layout().GetItem(Index).Clear.Click();
+            Parent.Layout().GetItem(Index).Clear.Invoke();
         }
     }
 }

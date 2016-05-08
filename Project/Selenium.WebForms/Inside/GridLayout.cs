@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using OpenQA.Selenium;
+using Selenium.StandardControls;
 
 namespace Selenium.WebForms.Inside
 {
@@ -47,12 +48,12 @@ namespace Selenium.WebForms.Inside
             private readonly IWebElement _element;
             private readonly int _index;
 
-            public IWebElement Delete => GetButton("Delete");
-            public IWebElement Edit => GetButton("Edit");
-            public IWebElement Update => GetButton("Update");
-            public IWebElement Cancel => GetButton("Cancel");
-            public IWebElement Insert => _element.FindElement(By.Id(_driver.Id + "_InsertButton"));
-            public IWebElement Clear => _element.FindElement(By.Id(_driver.Id + "_CancelButton"));
+            public ButtonDriver Delete => GetButton("Delete");
+            public ButtonDriver Edit => GetButton("Edit");
+            public ButtonDriver Update => GetButton("Update");
+            public ButtonDriver Cancel => GetButton("Cancel");
+            public ButtonDriver Insert => new ButtonDriver(_element.FindElement(By.Id(_driver.Id + "_InsertButton")));
+            public ButtonDriver Clear => new ButtonDriver(_element.FindElement(By.Id(_driver.Id + "_CancelButton")));
 
             public ListViewItemLayout(ListViewDriver driver, int index, IWebElement element)
             {
@@ -61,7 +62,7 @@ namespace Selenium.WebForms.Inside
                 _index = index;
             }
 
-            private IWebElement GetButton(string type) => _element.FindElement(By.Id(_driver.Id + "_" + type + "Button_" + _index));
+            private ButtonDriver GetButton(string type) => new ButtonDriver(_element.FindElement(By.Id(_driver.Id + "_" + type + "Button_" + _index)));
 
             public IListViewSubItemLayout GetSubItem(int index)
             {

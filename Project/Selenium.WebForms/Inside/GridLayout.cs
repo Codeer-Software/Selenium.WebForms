@@ -9,8 +9,9 @@ namespace Selenium.WebForms.Inside
         {
             private readonly ListViewDriver _driver;
             private readonly IWebElement _listView;
-            //TODO
-            private ReadOnlyCollection<IWebElement> Items => _listView.FindElements(By.TagName("tr"));
+
+            //TODO 入れ子になっている場合に不正にカウントされるので対応が必要。。トップだけ取ってくるようなことができるはず
+            private ReadOnlyCollection<IWebElement> Items => _listView.FindElements(By.XPath("tbody/tr"));
             public int ItemCount => Items.Count;
 
             internal ListViewLayout(ListViewDriver driver)

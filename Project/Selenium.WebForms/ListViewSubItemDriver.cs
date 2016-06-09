@@ -43,4 +43,37 @@ namespace Selenium.WebForms
             Index = index;
         }
     }
+    public static class ListViewSubItemExtensions
+    {
+        /// <summary>
+        /// Get of ButtonDriver
+        /// </summary>
+        /// <param name="subItem">Instance of ListViewSubItemDriver</param>
+        /// <returns>ButtonDriver</returns>
+        public static ButtonDriver AsButton(this ListViewSubItemDriver subItem) => new ButtonDriver(subItem.Element.FindElement(By.XPath("input[@type='submit']")));
+        /// <summary>
+        /// Get of CheckBoxDriver
+        /// </summary>
+        /// <param name="subItem">Instance of ListViewSubItemDriver</param>
+        /// <returns>CheckBoxDriver</returns>
+        public static CheckBoxDriver AsCheckButton(this ListViewSubItemDriver subItem) => new CheckBoxDriver(subItem.Element.FindElement(By.XPath("input[@type='checkbox']")));
+        /// <summary>
+        /// Get of LabelDriver
+        /// </summary>
+        /// <param name="subItem">Instance of ListViewSubItemDriver</param>
+        /// <returns>LabelDriver</returns>
+        public static LabelDriver AsLabel(this ListViewSubItemDriver subItem) => new LabelDriver(subItem.Element);
+        /// <summary>
+        /// Get of ButtonDriver
+        /// </summary>
+        /// <param name="subItem">Instance of ListViewSubItemDriver</param>
+        /// <returns>ButtonDriver</returns>
+        public static ButtonDriver AsLinkButton(this ListViewSubItemDriver subItem) => new ButtonDriver(subItem.Element.FindElement(By.TagName("a")));
+        /// <summary>
+        /// Get of TextBoxDriver
+        /// </summary>
+        /// <param name="subItem">Instance of ListViewSubItemDriver</param>
+        /// <returns>TextBoxDriver</returns>
+        public static TextBoxDriver AsTextBox(this ListViewSubItemDriver subItem) => new TextBoxDriver(subItem.Element.FindElement(By.XPath("input[@type='text']")));
+    }
 }

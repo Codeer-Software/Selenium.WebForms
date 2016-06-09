@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Test
 {
-    [TestClass]
+    //[TestClass]
     public class XPathTest
     {
         IWebDriver _driver;

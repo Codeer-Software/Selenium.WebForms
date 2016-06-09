@@ -6,7 +6,7 @@ using System.Threading;
 namespace Test
 {
     [TestClass]
-    public class ListView操作サンプル
+    public class ListViewTest
     {
         ListViewDriver _listView;
         IWebDriver _driver;

@@ -2,28 +2,50 @@
 
 namespace Selenium.WebForms
 {
-    //Todo 現状クリックはこれで良いが、本来ラジオボタン全体を取得してきて
-    //IsSelectedから1個をクリックみたいな処理が必要かも。保留
+    //Todo One from the entire radio button must be clicked like a handle?
     //http://toolsqa.com/selenium-webdriver/checkbox-radio-button-operations/
 
+    /// <summary>
+    /// ListViewSubItemRadioButton Driver
+    /// </summary>
     public class ListViewSubItemRadioButtonDriver : ListViewSubItemDriver
     {
-        private IWebElement CheckButton => Element.FindElement(By.XPath("input[@type='radio']"));
+        private IWebElement RadioButton => Element.FindElement(By.XPath("input[@type='radio']"));
+        /// <summary>
+        /// RadioButton text
+        /// </summary>
         public string Text => Element.Text;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="src">Instance of ListViewSubItemDriver</param>
         public ListViewSubItemRadioButtonDriver(ListViewSubItemDriver src) : base(src) { }
 
+        /// <summary>
+        /// Click of a RadioButton
+        /// </summary>
         public void Click()
         {
-            CheckButton.Click();
+            RadioButton.Click();
         }
+
+        /// <summary>
+        /// Select of a RadioButton
+        /// </summary>
+        /// <param name="check">true:checked false:unchecked</param>
         public void Select(bool check)
         {
-            if (CheckButton.Selected != check) Click();
+            if (RadioButton.Selected != check) Click();
         }
     }
 
     public static class ListViewSubItemRadioButtonDriverExtensions
     {
+        /// <summary>
+        /// Get of ListViewSubItemRadioButtonDriver
+        /// </summary>
+        /// <param name="subItem">Instance of ListViewSubItemDriver</param>
+        /// <returns>ListViewSubItemRadioButtonDriver</returns>
         public static ListViewSubItemRadioButtonDriver AsRadioButton(this ListViewSubItemDriver subItem) => new ListViewSubItemRadioButtonDriver(subItem);
     }
 }

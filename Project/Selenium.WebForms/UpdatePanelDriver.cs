@@ -4,8 +4,17 @@ using System.Threading;
 
 namespace Selenium.WebForms
 {
+    /// <summary>
+    /// UpdatePanel Driver
+    /// </summary>
     public class UpdatePanelDriver
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="action"></param>
+        /// <param name="uniqueName"></param>
         public static void WaitForUpdate(IWebDriver driver, Action action, string uniqueName = "Selenium_StandardControls_UpdatePanelEndRequest")
         {
             var flg = uniqueName + "_UpdatedFlg";

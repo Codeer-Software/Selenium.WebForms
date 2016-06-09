@@ -34,7 +34,7 @@
         /// </summary>
         public void StartEdit()
         {
-            Parent.Layout().GetItem(Index).Edit.Click();
+            Parent.Layout().GetItem(Index).Edit.Invoke();
         }
 
         /// <summary>
@@ -42,7 +42,7 @@
         /// </summary>
         public void Delete()
         {
-            Parent.Layout().GetItem(Index).Delete.Click();
+            Parent.Layout().GetItem(Index).Delete.Invoke();
         }
 
         /// <summary>
@@ -50,7 +50,7 @@
         /// </summary>
         public void Update()
         {
-            Parent.Layout().GetItem(Index).Update.Click();
+            Parent.Layout().GetItem(Index).Update.Invoke();
         }
 
         /// <summary>
@@ -58,7 +58,7 @@
         /// </summary>
         public void Cancel()
         {
-            Parent.Layout().GetItem(Index).Cancel.Click();
+            Parent.Layout().GetItem(Index).Cancel.Invoke();
         }
 
         /// <summary>
@@ -66,7 +66,7 @@
         /// </summary>
         public void Insert()
         {
-            Parent.Layout().GetItem(Index).Insert.Click();
+            Parent.Layout().GetItem(Index).Insert.Invoke();
         }
 
         /// <summary>
@@ -74,7 +74,7 @@
         /// </summary>
         public void Clear()
         {
-            Parent.Layout().GetItem(Index).Clear.Click();
+            Parent.Layout().GetItem(Index).Clear.Invoke();
         }
     }
 }

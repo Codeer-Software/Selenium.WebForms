@@ -38,10 +38,8 @@ namespace Test
             _listView.GetItem(1).StartEdit();
             _listView.GetItem(1).GetSubItem(2).AsTextBox().Edit("tt2");
             _listView.GetItem(1).Cancel();
-            _listView.GetItem(1).GetSubItem(3).AsButton().Click();
-            _listView.GetItem(1).GetSubItem(4).AsLinkButton().Click();
-            _listView.GetItem(1).GetSubItem(5).AsCheckButton().Edit(false);
-            _listView.GetItem(1).GetSubItem(5).AsCheckButton().Edit(true);
+            _listView.GetItem(1).GetSubItem(3).AsButton().Invoke();
+            _listView.GetItem(1).GetSubItem(4).AsLinkButton().Invoke();
 
             var insert = _listView.GetItem(_listView.ItemCount - 1);
             insert.GetSubItem(0).AsTextBox().Edit("100");
@@ -56,7 +54,7 @@ namespace Test
         [TestMethod]
         public void ElementTest()
         {
-            //納得がいく形に。
+            //ToDo 納得がいく形に。
 
             //The difference of the browser , divide the test if necessary
             var Info = _listView.GetItem(1).GetSubItem(1).Info;

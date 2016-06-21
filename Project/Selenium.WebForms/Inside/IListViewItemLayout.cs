@@ -1,5 +1,4 @@
-﻿using OpenQA.Selenium;
-using Selenium.StandardControls;
+﻿using Selenium.StandardControls;
 
 namespace Selenium.WebForms.Inside
 {

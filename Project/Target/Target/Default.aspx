@@ -1,20 +1,15 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Target._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="jumbotron">
-        <h1 style="font-style: italic; text-decoration: underline blink">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
-
-    <div>
+        <div>
         <asp:ListView ID="ListViewTestTarget" runat="server" DataSourceID="SqlDataSourceListView" DataKeyNames="Id" InsertItemPosition="LastItem">
             <AlternatingItemTemplate>
                 <tr style="">
                     <td>
-                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="削除" />
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="編集" />
+                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
                     </td>
                     <td>
                         <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' Font-Italic="true" Font-Bold="true" />
@@ -42,8 +37,8 @@
             <EditItemTemplate>
                 <tr style="">
                     <td>
-                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="更新" />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="キャンセル" />
+                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
                     </td>
                     <td>
                         <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' />
@@ -78,8 +73,8 @@
             <InsertItemTemplate>
                 <tr style="">
                     <td>
-                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="挿入" />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="クリア" />
+                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
                     </td>
                     <td>
                         <asp:TextBox ID="IdTextBox" runat="server" Text='<%# Bind("Id") %>' />
@@ -107,8 +102,8 @@
             <ItemTemplate>
                 <tr style="">
                     <td>
-                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="削除" />
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="編集" />
+                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
                     </td>
                     <td>
                         <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
@@ -157,7 +152,7 @@
                         <td runat="server" style="">
                             <asp:DataPager ID="DataPager1" runat="server">
                                 <Fields>
-                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
+                                    <asp:NextPreviousPagerField NextPageText="Next" FirstPageText="First" LastPageText="Last" PreviousPageText="Previous" ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
                                 </Fields>
                             </asp:DataPager>
                         </td>
@@ -167,8 +162,8 @@
             <SelectedItemTemplate>
                 <tr style="">
                     <td>
-                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="削除" />
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="編集" />
+                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
                     </td>
                     <td>
                         <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
@@ -194,7 +189,7 @@
                 </tr>
             </SelectedItemTemplate>
         </asp:ListView>
-        <asp:SqlDataSource ID="SqlDataSourceListView" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Data.mdf;Integrated Security=True;" DeleteCommand="DELETE FROM [Table_Data] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Table_Data] ([Id], [Label], [TextBox], [Button], [LinkButton], [CheckBox], [RadioButton]) VALUES (@Id, @Label, @TextBox, @Button, @LinkButton, @CheckBox, @RadioButton)" SelectCommand="SELECT [Id], [Label], [TextBox], [Button], [LinkButton], [CheckBox], [RadioButton] FROM [Table_Data]" UpdateCommand="UPDATE [Table_Data] SET [Label] = @Label, [TextBox] = @TextBox, [Button] = @Button, [LinkButton] = @LinkButton, [CheckBox] = @CheckBox, [RadioButton] = @RadioButton WHERE [Id] = @Id">
+        <asp:SqlDataSource ID="SqlDataSourceListView" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Table_Data] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Table_Data] ([Id], [Label], [TextBox], [Button], [LinkButton], [CheckBox], [RadioButton]) VALUES (@Id, @Label, @TextBox, @Button, @LinkButton, @CheckBox, @RadioButton)" SelectCommand="SELECT [Id], [Label], [TextBox], [Button], [LinkButton], [CheckBox], [RadioButton] FROM [Table_Data]" UpdateCommand="UPDATE [Table_Data] SET [Label] = @Label, [TextBox] = @TextBox, [Button] = @Button, [LinkButton] = @LinkButton, [CheckBox] = @CheckBox, [RadioButton] = @RadioButton WHERE [Id] = @Id">
             <DeleteParameters>
                 <asp:Parameter Name="Id" Type="Int32" />
             </DeleteParameters>
@@ -208,13 +203,13 @@
                 <asp:Parameter Name="RadioButton" Type="Boolean" />
             </InsertParameters>
             <UpdateParameters>
-                <asp:Parameter Name="Id" Type="Int32" />
                 <asp:Parameter Name="Label" Type="String" />
                 <asp:Parameter Name="TextBox" Type="String" />
                 <asp:Parameter Name="Button" Type="String" />
                 <asp:Parameter Name="LinkButton" Type="String" />
                 <asp:Parameter Name="CheckBox" Type="Boolean" />
                 <asp:Parameter Name="RadioButton" Type="Boolean" />
+                <asp:Parameter Name="Id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
         <input id="button1" type="button" value="Debug" onclick="AddColmns()" />

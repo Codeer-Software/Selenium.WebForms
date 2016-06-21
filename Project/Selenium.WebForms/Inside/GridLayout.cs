@@ -10,9 +10,7 @@ namespace Selenium.WebForms.Inside
         {
             private readonly ListViewDriver _driver;
             private readonly IWebElement _listView;
-
-            //TODO 入れ子になっている場合に不正にカウントされるので対応が必要。。トップだけ取ってくるようなことができるはず
-            private ReadOnlyCollection<IWebElement> Items => _listView.FindElements(By.XPath("tbody/tr"));
+            private ReadOnlyCollection<IWebElement> Items => _listView.FindElements(By.TagName("tr"));
             public int ItemCount => Items.Count;
 
             internal ListViewLayout(ListViewDriver driver)
@@ -38,9 +36,7 @@ namespace Selenium.WebForms.Inside
                 _element = element;
                 _index = index;
             }
-
-            //TODO
-            public string Text => _element.FindElements(By.TagName("th"))[_index + 1].Text;
+            public string Text => _element.FindElements(By.XPath("th"))[_index + 1].Text;
         }
 
         private class ListViewItemLayout : IListViewItemLayout
@@ -67,8 +63,7 @@ namespace Selenium.WebForms.Inside
 
             public IListViewSubItemLayout GetSubItem(int index)
             {
-                //TODO
-                return new ListViewSubItemLayout(_driver, _element.FindElements(By.TagName("td"))[index + 1]);
+                return new ListViewSubItemLayout(_driver, _element.FindElements(By.XPath("td"))[index + 1]);
             }
         }
 

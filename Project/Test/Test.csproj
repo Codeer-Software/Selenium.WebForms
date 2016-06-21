@@ -79,12 +79,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="XPathTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Init_Create.sql" />
     <None Include="Resources\Init_Insert.sql" />
-    <Content Include="XPathTarget.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Selenium.WebForms\Selenium.WebForms.csproj">

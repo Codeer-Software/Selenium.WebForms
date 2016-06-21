@@ -54,31 +54,21 @@ namespace Test
         [TestMethod]
         public void ElementTest()
         {
-            //ToDo 納得がいく形に。
-
-            //The difference of the browser , divide the test if necessary
             var Info = _listView.GetItem(1).GetSubItem(1).Info;
             Info.FontItalic.IsFalse();
             Info.FontBold.IsFalse();
             Info.FontSize.Is("14px");
             Info.TextUnderline.IsFalse();
             Info.TextLineThrough.IsFalse();
-            //Info.ImeMode.Is("auto");         //f:auto c,i:""
             Info.Text.IsNull();
             Info.Value.IsNull();
             Info.InnerHtml.Contains(" <span id=\"MainContent_ListViewTestTarget_LabelLabel_1\">").IsTrue();
-            //Info.InnerText.IsNull();        //f:"" c,i:"E2"
-            //Info.Width.Is("155.067px");         //f c i
-            //Info.Height.Is("27.4px");           //f c i
             Info.Font.Contains("Helvetica Neue").IsTrue();
             Info.Font.Contains("Helvetica").IsTrue();
             Info.Font.Contains("Arial").IsTrue();
             Info.Font.Contains("sans-serif").IsTrue();
             Info.Color.Is("rgba(51, 51, 51, 1)");
-            //Info.BackGroundColor.Is("transparent");    //f,i:transparent c:0,0,0
-            //Info.TextAlign.Is("start");               //f,c:start i:left
             Info.Class.Is("");
-            //Info.TabIndex.Is(-1);                        //f,c:-1 i:0
             Info.MaxLength.IsNull();
         }
     }

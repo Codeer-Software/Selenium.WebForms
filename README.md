@@ -5,7 +5,8 @@ Created by Ishikawa-Tatsuya Matsui-Bin
 
 What is Selenium.WebForms?
 ---
-The Selenium.WebForms, wraps the Seleinum in C#, test libraries to handle the controls of ASP.NET Web applications in a simple manner.
+- Wrapped test library selenium in C#
+- You can use the controls of ASP.NET Web Applications to simple
 ![image](/image.png)
 
 Sample Code

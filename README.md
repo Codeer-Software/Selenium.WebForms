@@ -52,8 +52,7 @@ Corresponding control
 
 ListView
 ---
-Be placed in the list view can be edited or obtained for each control
-
+![ListView](http://media-www-asp.azureedge.net/media/2576866/windowslivewriter_theentityframewor.netgettingstartedpart4_c24c_image03_thumb.png)
 - Button
 ```cs 
 _listView.GetItem(1).GetSubItem(1).AsButton().Click();
@@ -83,13 +82,9 @@ _listView.GetItem(1).GetSubItem(5).AsRadioButton().Select(true);
 _listView.GetItem(1).GetSubItem(6).AsTextBox().Edit("100");
 ```
 
-Element & ElementInfo
+About Info([Detail](https://github.com/Codeer-Software/Selenium.StandardControls/blob/master/README.md#about-element--elementinfo))
 ---
-Each control has a IWebElement and ElementInfo to each . Please operate using the IWebElement directly depending on the situation . Also ElementInfo is useful to get the information of the attributes([Detail](https://github.com/Codeer-Software/Selenium.StandardControls/blob/master/README.md#about-element--elementinfo)).
-
 ```cs 
-_listView.GetItem(1).GetSubItem(1).Element.SendKeys(Keys.Enter);
-
 var Info = _listView.GetItem(1).GetSubItem(1).Info;
 Info.InnerHtml.Is("1");
 Info.FontBold.IsFalse();
